@@ -35,24 +35,23 @@ FILES = ft_strlen.c \
 
 CC	= cc
 FLAGS = -Wall -Wextra -Werror
-LIB	= libft.a
 OFILES	= $(FILES:.c=.o)
-NAME = $(LIB)
+NAME = libft.a
 $(NAME): $(OFILES)
-	ar -rc $(LIB) $(OFILES)
+	ar -rcs $(NAME) $(OFILES)
 
 all: $(NAME)
 
 %.o: %.c
-	$(CC) $(FLAGS) -c $< -I./ -o $@
+	$(CC) $(FLAGS) -c $< -I. -o $@
 
 
 clean:
-	rm -f $(LIB)
 	rm -f $(OFILES)
 
 fclean: clean
-	rm -f $(LIB)
+	rm -f $(NAME)
+	rm -f $(OFILES)
 
 re: fclean all
 
