@@ -61,6 +61,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	y = trim_start(i, s1, set);
 	i = trim_end(y, s1, set);
 	trimmed = (char *)malloc(i - y + 1);
+	if (trimmed == NULL)
+		return (NULL);
 	j = 0;
 	while (y < i)
 	{

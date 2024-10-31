@@ -16,8 +16,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	*p;
 	int		i;
 	int		flag;
-  
-  flag = -1;
+
+	flag = -1;
 	i = 0;
 	p = (char *)s;
 	while (p[i])
@@ -26,9 +26,9 @@ char	*ft_strrchr(const char *s, int c)
 			flag = i;
 		i++;
 	}
-  if (p[i] == c)
-    return (p + i);
-  else if (flag != -1)
-	  return (p + flag);
-  return (NULL);
+	if (p[i] == c)
+		return (p + i);
+	else if (flag != -1)
+		return (p + flag);
+	return (NULL);
 }

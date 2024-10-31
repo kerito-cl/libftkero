@@ -52,9 +52,9 @@ char	*ft_itoa(int n)
 		hold = hold / 10;
 		i++;
 	}
-	num = (char *)malloc((i + 1)* sizeof(char));
-  if (num == NULL)
-    return (NULL);
+	num = (char *)malloc((i + 1) * sizeof(char));
+	if (num == NULL)
+		return (NULL);
 	allocate(num, i, neg, k);
 	return (num);
 }

@@ -15,11 +15,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct  s_list
+typedef struct	s_list
 {
-  void  *content;  
-  struct s_list  *next;
-} t_list;
+  void		*content;  
+  struct s_list		*next;
+}	t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -38,7 +38,7 @@ char	*ft_strchr(const char *s, int i);
 char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-size_t		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
