@@ -10,25 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
+#include  <stdio.h>
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	char	*s;
 	char	*c;
-	size_t	i;
-	int		comparison;
+	int	i;
 
-	comparison = 0;
 	s = (char *)s1;
 	c = (char *)s2;
 	i = 0;
-	while (i < n)
+	while (i < (int)n)
 	{
-		if (s[i] < c[i])
-			comparison = s[i] - c[i];
-		else if (c[i] < s[i])
-			comparison = s[i] - c[i];
+		if (s[i] != c[i])
+      return (s[i] - c[i]);
 		i++;
 	}
-	return (comparison);
+	return (0);
 }

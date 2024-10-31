@@ -9,22 +9,26 @@
 /*   Updated: 2024/10/29 18:23:09 by mquero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*p;
 	int		i;
 	int		flag;
-
+  
+  flag = -1;
 	i = 0;
 	p = (char *)s;
-	if (c == '\0')
-		return ("\0");
 	while (p[i])
 	{
 		if (p[i] == c)
 			flag = i;
 		i++;
 	}
-	return (p + flag);
+  if (p[i] == c)
+    return (p + i);
+  else if (flag != -1)
+	  return (p + flag);
+  return (NULL);
 }

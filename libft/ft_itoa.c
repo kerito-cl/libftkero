@@ -26,7 +26,7 @@ static void	allocate(char *num, int i, int neg, long int n)
 	{
 		num[0] = neg;
 	}
-	if (n < 10 && n > 0)
+	if (n < 10 && n >= 0)
 		num[i] = n + '0';
 }
 
@@ -52,7 +52,9 @@ char	*ft_itoa(int n)
 		hold = hold / 10;
 		i++;
 	}
-	num = (char *)malloc(i * sizeof(char));
+	num = (char *)malloc((i + 1)* sizeof(char));
+  if (num == NULL)
+    return (NULL);
 	allocate(num, i, neg, k);
 	return (num);
 }

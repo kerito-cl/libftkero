@@ -26,7 +26,7 @@
 int	main()
 {
 	char	str[] = "Hola que tal";
-	char	dest[20];
+	char	dest[15];
 	int	test;
 	char	c = 'a';
 
@@ -57,7 +57,7 @@ int	main()
 	printf("%s", str);*/
 
 	//MEMCPY
-	/*ft_memcpy(dest,str, 5);
+	/*memcpy((void*)0,(void*)0, 3);
 	printf("%s", dest);*/
 
 	//MEMMOVE
@@ -65,13 +65,15 @@ int	main()
 	printf("%s", str);*/
 
 	//STRLCPY
-	/*ft_strlcpy(dest, "hola que tal", 8);
-  	printf("%s\n" ,dest);*/
+  /*int i = strlcpy(dest, "", 15);
+  write(1, dest, 15);
+  //write(1, "\n", 1);*/
+
 
 	//STRLCAT
-	/*char d[40] = "siempre digo";
-	ft_strlcat(d, "hola que tal", 20);
-  	printf("%s\n" ,d);*/
+	char d[40] = "siempre digo";
+	int i = ft_strlcat(d, "hola que tal", 0);
+  	printf("%d\n" ,i);
 
 	//TOUPPER
 	/*printf("%c", ft_toupper('a'));*/
@@ -80,7 +82,7 @@ int	main()
 	/*printf("%c", ft_tolower('A'));*/
 
 	//STRCHR
-	/*printf("%s", ft_strchr(str, 'l'));*/
+	/*printf("%s", strchr(NULL, '\0'));*/
 
 	//STRRCHR
 	/*printf("%s", ft_strrchr(str, 'l'));*/
@@ -93,13 +95,15 @@ int	main()
 	printf("%s", s);*/
 
 	//MEMCMP
-	/*char  *s = "ai02";
-  	char  *cmp = "al1";
-	printf("%d", ft_memcmp(s, cmp, 2));*/
+  /*char *s1 = "hols que tal";
+	char *s2 = "hola qse tal";
+	printf("%d\n", memcmp(s1, s2, 8));
+	printf("%d\n", ft_memcmp(s1, s2, 8));*/
 	
 	//STRNSTR
-	/*char *s = ft_strnstr(str, "que", 40);
-	printf("%s", s);*/
+	/*char *s = "hola si que tal";
+  char *a = "si que";
+	printf("%s", ft_strnstr(s, a, 8));*/
 
 	//ATOI
 	/*printf("%d", ft_atoi("2442334354564823"));*/
@@ -133,9 +137,12 @@ int	main()
 	printf("%s", d);*/
 
 	//SUBSTR
-	/*size_t a = ft_strlen(str);
-	char *s = ft_substr(str, 4, 9999);
-	printf("%s", s);*/
+  /*char s[] = "hola";
+	size_t size = 20;
+  char *ret = ft_substr(s, 7, 999);
+
+	printf("%s", ret);*/
+
 
 	//STRJOIN
 	/*printf("%s", ft_strjoin("hola", "que tal"));*/
@@ -158,7 +165,7 @@ int	main()
 
 	//ITOA
 	
-	/*printf("%s", ft_itoa(123));*/
+	/*printf("%s", ft_itoa(0));*/
 
 	//STRMAPA
 	/*char *s = ft_strmapi("123456", function);
