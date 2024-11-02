@@ -11,7 +11,27 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+static int	countarr(int n, const char *s, char c)
+{
+	int	i;
+	int	flag;
 
+	i = 0;
+	flag = 0;
+	while (s[i])
+	{
+		if (s[i] != c && flag == 0)
+		{
+			flag = 1;
+			n++;
+		}
+		else if (s[i] == c)
+			flag = 0;
+		i++;
+	}
+	return (n);
+}
 static void	allocate(char **strsplit, char const *s, char c, int n)
 {
 	int	i;
@@ -35,31 +55,16 @@ static void	allocate(char **strsplit, char const *s, char c, int n)
 		i++;
 		k = 0;
 	}
-	strsplit[i] = (char *)malloc(1);
-	strsplit[i] = (char *) NULL;
+	strsplit[i] = (char *)NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**strsplit;
-	int		i;
 	int		n;
-	int		flag;
 
-	flag = 0;
 	n = 0;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] != c && flag == 0)
-		{
-			flag = 1;
-			n++;
-		}
-		else if (s[i] == c)
-			flag = 0;
-		i++;
-	}
+	n = countarr(n, s, c);
 	strsplit = (char **)malloc((n + 1) * sizeof (char *));
 	if (strsplit == NULL)
 		return (NULL);

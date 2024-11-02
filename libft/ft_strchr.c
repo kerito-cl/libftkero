@@ -14,23 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	char	*p;
-
-	i = 0;
-	p = (char *)s;
-	while (p[i])
+	while (*s)
 	{
-		if (p[i] == c)
-			return (p + i);
-		i++;
+		if (*s == (unsigned char)c)
+			return ((char *)s);
+		s++;
 	}
-	if (p[i] == c)
-		return (p + i);
+	if (*s == (unsigned char)c && *s == '\0')
+		return ((char *)s);
 	return (NULL);
 }
-/*int main(void)
-{
-  char  *str = "";
-  printf("%s\n", ft_strchr(str, '\0'));
-}*/

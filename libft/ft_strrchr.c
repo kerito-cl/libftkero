@@ -22,11 +22,11 @@ char	*ft_strrchr(const char *s, int c)
 	p = (char *)s;
 	while (p[i])
 	{
-		if (p[i] == c)
+		if (p[i] == (unsigned char)c)
 			flag = i;
 		i++;
 	}
-	if (p[i] == c)
+	if (p[i] == (unsigned char)c)
 		return (p + i);
 	else if (flag != -1)
 		return (p + flag);

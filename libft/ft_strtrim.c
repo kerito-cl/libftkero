@@ -44,8 +44,12 @@ int	trim_end(int i, char const*s1, char const *set)
 		{
 			if (s1[k] == set[j])
 				i = trim_start(k + 1, s1, set);
+			else if (s1[k] == '\0')
+				i = k;
 			j++;
 		}
+		if (set[0] == '\0')
+			i++;
 	}
 	return (k);
 }
@@ -60,7 +64,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	y = trim_start(i, s1, set);
 	i = trim_end(y, s1, set);
-	trimmed = (char *)malloc(i - y + 1);
+	trimmed = (char *)malloc((i - y + 1) * sizeof(char));
 	if (trimmed == NULL)
 		return (NULL);
 	j = 0;
