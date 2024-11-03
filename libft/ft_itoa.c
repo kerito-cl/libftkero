@@ -32,8 +32,8 @@ static void	allocate(char *num, int i, int neg, long int n)
 
 char	*ft_itoa(int n)
 {
-	long int	hold;
-	long int	k;
+	long long	hold;
+	long long	k;
 	int			i;
 	char		*num;
 	char		neg;
