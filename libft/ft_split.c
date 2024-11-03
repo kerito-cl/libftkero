@@ -20,7 +20,6 @@ static void	freesplit(char **strs)
 	while (strs[i])
 	{
 		free(strs[i]);
-		strs[i] = NULL;
 		i++;
 	}
 	free(strs);
