@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mquero <mqueri@student.fi>                 +#+  +:+       +#+        */
+/*   By: mquero <mquero@student.fi>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:05:50 by mquero            #+#    #+#             */
 /*   Updated: 2024/10/30 11:16:58 by mquero           ###   ########.fr       */
@@ -13,8 +13,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
+	size_t			i;
 	unsigned char	*p;
-	size_t	i;
 
 	i = 0;
 	p = (unsigned char *)s;

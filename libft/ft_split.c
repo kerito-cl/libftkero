@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 static int	countarr(int n, const char *s, char c)
 {
 	int	i;
@@ -32,6 +32,7 @@ static int	countarr(int n, const char *s, char c)
 	}
 	return (n);
 }
+
 static void	allocate(char **strsplit, char const *s, char c, int n)
 {
 	int	i;
@@ -55,7 +56,7 @@ static void	allocate(char **strsplit, char const *s, char c, int n)
 		i++;
 		k = 0;
 	}
-	strsplit[i] = (char *)NULL;
+	strsplit[i] = (char *) NULL;
 }
 
 char	**ft_split(char const *s, char c)

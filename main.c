@@ -25,10 +25,10 @@
 
 int	main()
 {
-	char	str[] = "Hola que tal";
+	/*char	str[] = "Hola que tal";
 	char	dest[15];
 	int	test;
-	char	c = 'a';
+	char	c = 'a';*/
 
 
 	//ISALPHA
@@ -57,7 +57,7 @@ int	main()
 	printf("%s", str);*/
 
 	//MEMCPY
-	/*memcpy((void*)0,(void*)0, 3);
+	/*ft_memcpy((void*)0,(void*)0, 3);
 	printf("%s", dest);*/
 
 	//MEMMOVE
@@ -71,9 +71,9 @@ int	main()
 
 
 	//STRLCAT
-	char d[40] = "siempre digo";
+	/*char d[40] = "siempre digo";
 	int i = ft_strlcat(d, "hola que tal", 0);
-  	printf("%d\n" ,i);
+  	printf("%d\n" ,i);*/
 
 	//TOUPPER
 	/*printf("%c", ft_toupper('a'));*/
@@ -82,7 +82,9 @@ int	main()
 	/*printf("%c", ft_tolower('A'));*/
 
 	//STRCHR
-	/*printf("%s", strchr(NULL, '\0'));*/
+	/*char *s = "teste";
+	strchr(s, 'e');
+	printf("%p", s);*/
 
 	//STRRCHR
 	/*printf("%s", ft_strrchr(str, 'l'));*/
@@ -95,14 +97,14 @@ int	main()
 	printf("%s", s);*/
 
 	//MEMCMP
-  /*char *s1 = "hols que tal";
+  	/*char *s1 = "hols que tal";
 	char *s2 = "hola qse tal";
 	printf("%d\n", memcmp(s1, s2, 8));
 	printf("%d\n", ft_memcmp(s1, s2, 8));*/
 	
 	//STRNSTR
 	/*char *s = "hola si que tal";
-  char *a = "si que";
+  	char *a = "si que";
 	printf("%s", ft_strnstr(s, a, 8));*/
 
 	//ATOI
@@ -137,32 +139,29 @@ int	main()
 	printf("%s", d);*/
 
 	//SUBSTR
-  /*char s[] = "hola";
-	size_t size = 20;
-  char *ret = ft_substr(s, 7, 999);
-
-	printf("%s", ret);*/
+  	/*char *ret = ft_substr("hola", 0, 18446744073709551615);
+	printf("%p", ret);
+	free(ret);*/
 
 
 	//STRJOIN
 	/*printf("%s", ft_strjoin("hola", "que tal"));*/
 
 	//STRTRIM
-	/*printf("%s", ft_strtrim("_hola_54_", "_4"));*/
+		/*char s1[] = "hela";
+		char *s2 = ft_strtrim(s1, "o");
+	printf("%s", s2);
+	free(s2);*/
 
 	//SPLIT
-	/*int a = 0;
-	char **s = ft_split("hola que tal estas", ' ');
+	int a = 0;
+	char **s = ft_split(" he llo !", ' ');
+	//ft_split("holaque", ' ');
 	while (s[a])
 	{
-		printf("%s\n", s[a]);
-		free(s[a]);
+		printf("%s", s[a]);
 		a++;
 	}
-
-	free(s[a]);
-	free(s);*/
-
 	//ITOA
 	
 	/*printf("%s", ft_itoa(0));*/

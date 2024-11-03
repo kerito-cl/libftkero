@@ -25,11 +25,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (len);
 	if (i >= size)
 		return (size + len);
-	while ((i + k) < (size - 1) && len > 0)
+	while (src[k] && ((i + k) < (size - 1)))
 	{
 		dst[i + k] = src[k];
 		k++;
 	}
-	dst[i + k] = '\0';
+	if (i < size)
+		dst[i + k] = '\0';
 	return (len + i);
 }
