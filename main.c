@@ -155,13 +155,9 @@ int	main()
 
 	//SPLIT
 	int a = 0;
-	char **s = ft_split(" he llo !", ' ');
+	char **s = ft_split("xxxxxxxxhello", 'x');
 	//ft_split("holaque", ' ');
-	while (s[a])
-	{
-		printf("%s", s[a]);
-		a++;
-	}
+	
 	//ITOA
 	
 	/*printf("%s", ft_itoa(0));*/

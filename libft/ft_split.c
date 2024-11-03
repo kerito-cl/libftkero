@@ -12,6 +12,20 @@
 
 #include "libft.h"
 
+static void	freesplit(char **strs)
+{
+	int	i;
+
+	i = 0;
+	while (strs[i])
+	{
+		free(strs[i]);
+		strs[i] = NULL;
+		i++;
+	}
+	free(strs);
+}
+
 static int	countarr(int n, const char *s, char c)
 {
 	int	i;
@@ -33,42 +47,50 @@ static int	countarr(int n, const char *s, char c)
 	return (n);
 }
 
-static void	allocate(char **strsplit, char const *s, char c, int n)
+static char	*allocate(char const *s, char c, int *y)
 {
-	int	i;
-	int	y;
-	int	k;
+	int		k;
+	char	*temp;
 
-	i = 0;
-	y = 0;
 	k = 0;
-	while (i < n)
+	while (s[*y] == c)
+		*y = *y + 1;
+	while (s[*y] != c && s[*y] != '\0')
 	{
-		while (s[y] == c)
-			y++;
-		while (s[y] != c)
-		{
-			k++;
-			y++;
-		}
-		strsplit[i] = (char *)malloc(k + 1);
-		ft_strlcpy(strsplit[i], (s + y - k), k + 1);
-		i++;
-		k = 0;
+		k++;
+		*y = *y + 1;
 	}
-	strsplit[i] = (char *) NULL;
+	temp = (char *)malloc((k + 1) * (sizeof(char)));
+	if (temp == NULL)
+		return (NULL);
+	ft_strlcpy(temp, (s + *y - k), k + 1);
+	return (temp);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**strsplit;
 	int		n;
+	int		i;
+	int		y;
 
+	i = 0;
 	n = 0;
+	y = 0;
 	n = countarr(n, s, c);
 	strsplit = (char **)malloc((n + 1) * sizeof (char *));
 	if (strsplit == NULL)
 		return (NULL);
-	allocate(strsplit, s, c, n);
+	strsplit[n] = NULL;
+	while (i < n)
+	{
+		strsplit[i] = allocate((char *)s, c, &y);
+		if (strsplit[i] == NULL)
+		{
+			freesplit(strsplit);
+			return (NULL);
+		}
+		i++;
+	}
 	return (strsplit);
 }
