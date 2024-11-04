@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mquero <mquero@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 17:10:43 by mquero            #+#    #+#             */
-/*   Updated: 2024/10/30 14:27:52 by mquero           ###   ########.fr       */
+/*   Created: 2024/11/04 20:50:28 by mquero            #+#    #+#             */
+/*   Updated: 2024/11/04 20:52:04 by mquero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	void		*ptr;
-	size_t		n;
+  t_list  *temp;
 
-	if (nmemb && size > (size_t)-1 / nmemb
-		&& nmemb && size > (size_t)-1 / size)
-		return (0);
-	n = nmemb * size;
-	ptr = malloc(n);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, n);
-	return (ptr);
+  temp = *lst;
+  while (temp->next != NULL)
+  {
+   temp = temp->next;
+  }
+  temp->next = new;
 }
