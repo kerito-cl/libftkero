@@ -6,7 +6,7 @@
 /*   By: mquero <mquero@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:48:36 by mquero            #+#    #+#             */
-/*   Updated: 2024/10/30 11:08:12 by mquero           ###   ########.fr       */
+/*   Updated: 2024/11/05 14:58:56 by mquero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_atoi(const char *str)
 {
 	int		i;
 	int		n;
-	long 		hold;
+	long	hold;
 
 	i = 0;
 	n = 1;

@@ -6,9 +6,10 @@
 /*   By: mquero <mquero@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:48:32 by mquero            #+#    #+#             */
-/*   Updated: 2024/10/30 16:37:41 by mquero           ###   ########.fr       */
+/*   Updated: 2024/11/05 15:01:15 by mquero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
